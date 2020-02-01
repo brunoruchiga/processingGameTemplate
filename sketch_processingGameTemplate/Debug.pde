@@ -7,5 +7,6 @@ void setupDebug() {
 
   //time.debug = true; 
   //controller.debug = true;
+  save.debug = true;
 
 }

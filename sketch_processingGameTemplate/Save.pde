@@ -1,6 +1,7 @@
 class Save {
   String path;
   JSONObject data;
+  boolean debug = false;
 
   Save() {
     path = "data/save.json";
@@ -16,20 +17,23 @@ class Save {
     } else {
       data = loadJSONObject(path);
     }
-    println(data);
   }
 
   void editValue(String jsonKey, String value) {
     data.setString(jsonKey, value);
     saveJSONObject(data, path);
-    println(data);
-    println("Saved");
+    if (debug) {
+      println(data);
+      println("Saved");
+    }
   }
 
   void editValue(String jsonKey, int value) {
     data.setInt(jsonKey, value);
     saveJSONObject(data, path);
-    println(data);
-    println("Saved");
+    if (debug) {
+      println(data);
+      println("Saved");
+    }
   }
 }
