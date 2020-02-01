@@ -1,11 +1,13 @@
 class Save {
+  String path;
   JSONObject data;
 
   Save() {
-    createSaveFile("data/save.json");
+    path = "data/save.json";
+    createSaveFile();
   }
 
-  void createSaveFile(String path) {
+  void createSaveFile() {
     if (loadStrings(path) == null) {
       data = new JSONObject();
       data.setInt("id", 0);
@@ -15,5 +17,19 @@ class Save {
       data = loadJSONObject(path);
     }
     println(data);
+  }
+
+  void editValue(String jsonKey, String value) {
+    data.setString(jsonKey, value);
+    saveJSONObject(data, path);
+    println(data);
+    println("Saved");
+  }
+
+  void editValue(String jsonKey, int value) {
+    data.setInt(jsonKey, value);
+    saveJSONObject(data, path);
+    println(data);
+    println("Saved");
   }
 }
