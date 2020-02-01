@@ -23,8 +23,8 @@ class Save {
     data.setString(jsonKey, value);
     saveJSONObject(data, path);
     if (debug) {
-      println(data);
-      println("Saved");
+      println("[Save] " + data);
+      println("[Save] " + "Saved");
     }
   }
 
@@ -32,8 +32,8 @@ class Save {
     data.setInt(jsonKey, value);
     saveJSONObject(data, path);
     if (debug) {
-      println(data);
-      println("Saved");
+      println("[Save] " + data);
+      println("[Save] Saved");
     }
   }
 }
