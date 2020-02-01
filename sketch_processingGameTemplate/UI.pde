@@ -63,13 +63,3 @@ class Button {
     text(getText(textKey), x+(w/2), y+(h/2));
   }
 }
-
-String getText (String textKey) {
-  int keyIndex = localization.findRowIndex(textKey, "key");
-  if (keyIndex == -1) {
-    //Error
-    println("[Localization] Key \"" + textKey + "\" not found on table");
-    return "[" + textKey + "]";
-  };
-  return localization.getString(keyIndex, languageId);
-}

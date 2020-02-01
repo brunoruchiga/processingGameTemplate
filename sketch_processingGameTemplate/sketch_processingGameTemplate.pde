@@ -9,8 +9,7 @@ Time time;
 Game game; 
 Controller controller;
 Menu menu;
-Table localization;
-String languageId;
+Localization localization;
 Save save;
 PFont font, fontBig, fontSmall;
 
@@ -33,8 +32,7 @@ void setup() {
   time = new Time();
   game = new Game();
   controller = new Controller();
-  localization = loadTable("localization.csv", "header");
-  languageId = localization.getColumnTitle(1);
+  localization = new Localization();
   save = new Save();
   menu = new Menu();
 
@@ -69,8 +67,6 @@ void draw() {
 
     ///////////////////////
     if (state.is(state.CONFIG)) {
-      //languageId = "PT";
-      //languageId = "EN";
     }
 
     ///////////////////////

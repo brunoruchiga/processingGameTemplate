@@ -5,7 +5,6 @@ class Canvas {
   Canvas(float ratio) {
     if (height*ratio>width) {
       //vertical screen
-
       w = width;
       h = w/ratio;
 
@@ -13,7 +12,6 @@ class Canvas {
       y = height/2 - h/2;
     } else {
       //horizontal screen
-
       h = height;
       w = h*ratio;
 
