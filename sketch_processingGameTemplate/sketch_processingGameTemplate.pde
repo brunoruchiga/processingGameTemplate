@@ -11,6 +11,7 @@ Controller controller;
 Menu menu;
 Table localization;
 String languageId;
+Save save;
 PFont font, fontBig, fontSmall;
 
 void settings() {
@@ -34,6 +35,7 @@ void setup() {
   controller = new Controller();
   localization = loadTable("localization.csv", "header");
   languageId = localization.getColumnTitle(1);
+  save = new Save();
   menu = new Menu();
 
   font = createFont("Roboto-Bold.ttf", em);
